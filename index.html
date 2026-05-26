@@ -10,20 +10,5 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script>
-      // GitHub Pages SPA 路由重定向
-      (function() {
-        var path = window.location.pathname;
-        var base = '/fuzzy-barnacle/';
-        
-        // 如果不是根路径且不是静态资源
-        if (path !== base && path !== base.slice(0, -1) && 
-            !path.match(/\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot)$/)) {
-          // 重定向到 index.html 并保留路径
-          sessionStorage.setItem('redirect-path', path);
-          window.location.replace(base);
-        }
-      })();
-    </script>
   </body>
 </html>

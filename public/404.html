@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    // GitHub Pages SPA 404 重定向
+    var path = window.location.pathname;
+    var hash = window.location.hash;
+    
+    // 将路径转换为 hash
+    if (!hash) {
+      var redirectPath = path.replace(/\/fuzzy-barnacle\/?/, '/') || '/';
+      window.location.href = '/fuzzy-barnacle/#' + redirectPath;
+    }
+  </script>
+</head>
+<body>
+  <p>Redirecting...</p>
+  <noscript><a href="/fuzzy-barnacle/">点击这里返回首页</a></noscript>
+</body>
+</html>
