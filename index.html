@@ -1,24 +1,29 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Trae Project</title>
-    <script type="module">
-      if (import.meta.hot?.on) {
-        import.meta.hot.on('vite:error', (error) => {
-          if (error.err) {
-            console.error(
-              [error.err.message, error.err.frame].filter(Boolean).join('\n'),
-            )
-          }
-        })
-      }
-    </script>
+    <meta name="description" content="美味达 - 现代化外卖点餐平台，精选美食30分钟极速送达" />
+    <title>美味达 | 外卖点餐系统</title>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // GitHub Pages SPA 路由重定向
+      (function() {
+        var path = window.location.pathname;
+        var base = '/fuzzy-barnacle/';
+        
+        // 如果不是根路径且不是静态资源
+        if (path !== base && path !== base.slice(0, -1) && 
+            !path.match(/\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot)$/)) {
+          // 重定向到 index.html 并保留路径
+          sessionStorage.setItem('redirect-path', path);
+          window.location.replace(base);
+        }
+      })();
+    </script>
   </body>
 </html>
